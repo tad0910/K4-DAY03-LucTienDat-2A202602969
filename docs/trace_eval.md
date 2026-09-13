@@ -32,8 +32,8 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
     "action_type": "TOOL_EXECUTION",
     "tool_name": "schedule_appointment",
     "arguments": {
-      "datetime_str": "14:00 15/09/2026",
       "student_id": "SV2026001",
+      "datetime_str": "14:00 15/09/2026",
       "advisor_name": "R401"
     },
     "observation": {
@@ -44,7 +44,7 @@ Dán 1 đoạn trích xuất log tiêu biểu từ file `docs/trace_waterfall.js
       "advisor": "R401",
       "message": "Đặt lịch thành công cho sinh viên SV2026001 với R401 vào lúc 14:00 15/09/2026."
     },
-    "latency_ms": 9019.35
+    "latency_ms": 10218.66
   }
 ]
 ```

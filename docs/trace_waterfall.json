@@ -5,15 +5,15 @@
     "action_type": "FINAL_ANSWER",
     "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
     "output": "Chào bạn, tôi là Trợ lý Tác tử Học vụ Thông minh của Đại học VinUni. Rất tiếc, tôi không có thông tin về quy định sử dụng phòng họp và đăng ký thiết bị. Tôi chỉ có thể hỗ trợ bạn tra cứu hồ sơ học vụ và đặt lịch hẹn tư vấn.",
-    "latency_ms": 2740.46
+    "latency_ms": 3008.57
   },
   {
     "step": 1,
     "query": "Hãy kiểm tra danh sách phòng họp còn trống cho 10 người vào lúc 14:00 ngày 15/09/2026.",
     "action_type": "FINAL_ANSWER",
     "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
-    "output": "Tôi xin lỗi, tôi không thể kiểm tra danh sách phòng họp còn trống với số lượng người cụ thể. Chức năng đặt lịch hẹn của tôi chỉ hỗ trợ đặt lịch với cố vấn học tập hoặc đặt phòng họp tư vấn theo tên phòng cụ thể, không có chức năng kiểm tra sức chứa hay tình trạng trống của phòng.",
-    "latency_ms": 2195.98
+    "output": "Tôi xin lỗi, tôi không thể kiểm tra danh sách phòng họp còn trống với số lượng người cụ thể. Chức năng của tôi chỉ hỗ trợ đặt lịch hẹn tư vấn học vụ hoặc đặt phòng họp tư vấn nếu bạn đã biết tên phòng hoặc tên cố vấn.",
+    "latency_ms": 2509.03
   },
   {
     "step": 1,
@@ -21,8 +21,8 @@
     "action_type": "TOOL_EXECUTION",
     "tool_name": "schedule_appointment",
     "arguments": {
-      "datetime_str": "14:00 15/09/2026",
       "student_id": "SV2026001",
+      "datetime_str": "14:00 15/09/2026",
       "advisor_name": "R401"
     },
     "observation": {
@@ -33,7 +33,7 @@
       "advisor": "R401",
       "message": "Đặt lịch thành công cho sinh viên SV2026001 với R401 vào lúc 14:00 15/09/2026."
     },
-    "latency_ms": 9019.35
+    "latency_ms": 10218.66
   },
   {
     "step": 2,
@@ -47,36 +47,38 @@
     "step": 1,
     "query": "Tôi cần tìm phòng họp cho sinh viên SV2026001 gồm 8 người vào 15:00 ngày 16/09/2026. Hãy kiểm tra phòng trống phù hợp và tự động đặt phòng giúp tôi.",
     "action_type": "TOOL_EXECUTION",
-    "tool_name": "schedule_appointment",
+    "tool_name": "academic_query",
     "arguments": {
-      "student_id": "SV2026001",
-      "datetime_str": "15:00 16/09/2026",
-      "advisor_name": "Phòng họp lớn"
+      "student_id": "SV2026001"
     },
     "observation": {
       "status": "SUCCESS",
-      "booking_id": "BK-SV2026001-99",
       "student_id": "SV2026001",
-      "datetime": "15:00 16/09/2026",
-      "advisor": "Phòng họp lớn",
-      "message": "Đặt lịch thành công cho sinh viên SV2026001 với Phòng họp lớn vào lúc 15:00 16/09/2026."
+      "data": {
+        "full_name": "Nguyễn Văn An",
+        "class": "AI-K4",
+        "gpa": 3.85,
+        "email": "an.nv@vinuni.edu.vn",
+        "status": "Đang học",
+        "advisor": "PGS.TS Nguyễn Văn A"
+      }
     },
-    "latency_ms": 2469.62
+    "latency_ms": 993.62
   },
   {
     "step": 2,
     "query": "Tôi cần tìm phòng họp cho sinh viên SV2026001 gồm 8 người vào 15:00 ngày 16/09/2026. Hãy kiểm tra phòng trống phù hợp và tự động đặt phòng giúp tôi.",
     "action_type": "FINAL_ANSWER",
     "thought": "Tổng hợp kết quả từ MCP Server thành công.",
-    "output": "Đặt lịch thành công cho sinh viên SV2026001 với Phòng họp lớn vào lúc 15:00 16/09/2026.",
+    "output": "Kết quả tra cứu cho sinh viên SV2026001 (Nguyễn Văn An): Lớp AI-K4, GPA: 3.85, Email: an.nv@vinuni.edu.vn, Trạng thái: Đang học, Cố vấn: PGS.TS Nguyễn Văn A.",
     "latency_ms": 10.0
   },
   {
     "step": 1,
     "query": "Hãy kiểm tra lịch phòng họp R999 cho sinh viên SV9999999.",
     "action_type": "FINAL_ANSWER",
-    "thought": "Gemini phản hồi trực tiếp bằng văn bản (không cần gọi công cụ).",
-    "output": "Tôi không có khả năng kiểm tra lịch phòng họp cụ thể. Tuy nhiên, tôi có thể giúp bạn đặt lịch hẹn tư vấn hoặc đặt phòng họp nếu bạn cung cấp thời gian cụ thể.",
-    "latency_ms": 2305.72
+    "thought": "Câu hỏi chung về quy chế học vụ, trả lời trực tiếp không cần gọi Tool.",
+    "output": "[Mock Agent Response]: Xin chào! Quy chế học vụ VinUni yêu cầu sinh viên tích lũy tối thiểu 120 tín chỉ và duy trì GPA trên 2.0 để tốt nghiệp.",
+    "latency_ms": 527.7
   }
 ]

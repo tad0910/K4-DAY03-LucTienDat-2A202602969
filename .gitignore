@@ -14,3 +14,8 @@ __pycache__/
 Thumbs.db
 .vscode/
 .idea/
+
+# Local Presentation Demo Files (Ignored from Git)
+demo_dashboard.html
+docs/presentation_script.md
+
