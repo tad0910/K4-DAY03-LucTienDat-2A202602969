@@ -39,13 +39,24 @@ TOOLS_SCHEMA = [
     # --------------------------------------------------------------------------
     {
         "name": "schedule_appointment",
-        "description": "Đặt lịch hẹn tư vấn học vụ với Cố vấn học tập VinUni.",
+        "description": "Đặt lịch hẹn tư vấn học vụ hoặc đăng ký đặt phòng họp tư vấn với Cố vấn học tập VinUni.",
         "parameters": {
             "type": "object",
             "properties": {
-                # TODO 1.2: Khai báo các thuộc tính tham số cho Tool tại đây...
+                "student_id": {
+                    "type": "string",
+                    "description": "Mã sinh viên cần đặt lịch (ví dụ: 'SV2026001')"
+                },
+                "datetime_str": {
+                    "type": "string",
+                    "description": "Thời gian hẹn (ví dụ: '14:00 15/09/2026')"
+                },
+                "advisor_name": {
+                    "type": "string",
+                    "description": "Tên cố vấn học tập hoặc tên phòng họp tư vấn (ví dụ: 'PGS.TS Nguyễn Văn A')"
+                }
             },
-            "required": [] # TODO 1.2: Khai báo danh sách các trường bắt buộc tại đây...
+            "required": ["student_id", "datetime_str"]
         }
     }
 ]

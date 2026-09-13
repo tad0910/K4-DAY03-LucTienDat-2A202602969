@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, quy định sử dụng phòng họp và đăng ký thiết bị tại VinUni như thế nào?",
+    "expected_behavior": "Chatbot trả lời trực tiếp từ System Prompt, không cần gọi bất kỳ Tool nào.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Hãy kiểm tra danh sách phòng họp còn trống cho 10 người vào lúc 14:00 ngày 15/09/2026.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh Tool Call 'check_room_availability' với các tham số thời gian và sức chứa.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "appointment_booking",
+    "question": "Hãy đặt phòng họp R401 cho sinh viên SV2026001 vào lúc 14:00 ngày 15/09/2026 với cố vấn PGS.TS Nguyễn Văn A.",
+    "expected_behavior": "Agent tự động phát sinh Tool Call 'book_meeting_room' với đúng thông tin phòng họp, sinh viên và thời gian.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Tôi cần tìm phòng họp cho sinh viên SV2026001 gồm 8 người vào 15:00 ngày 16/09/2026. Hãy kiểm tra phòng trống phù hợp và tự động đặt phòng giúp tôi.",
+    "expected_behavior": "Agent thực hiện chuỗi suy luận ReAct đa bước: Tra cứu phòng trống phù hợp trước, sau đó tiến hành đặt phòng họp.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Hãy kiểm tra lịch phòng họp R999 cho sinh viên SV9999999.",
+    "expected_behavior": "Agent nhận kết quả NOT_FOUND từ Tool và đưa ra phản hồi lịch sự, chính xác không bịa đặt dữ liệu.",
+    "complexity": "Medium"
+  }
+]
